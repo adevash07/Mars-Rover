@@ -1,4 +1,4 @@
-import { roverDriver } from "./driveRover";
+import { roverDriver } from "./roverDriver";
 
 describe("Testing Rover Driver System", () => {
   const apolloSearcher: Rover = {
