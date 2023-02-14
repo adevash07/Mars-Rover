@@ -6,25 +6,27 @@ type East = "E";
 type Right = "R";
 type Left = "L";
 
-type steer = "R" | "L";
+type Steer = "R" | "L";
 
-type direction = North | South | West | East;
+type Direction = North | South | West | East;
 
 // ROVER MODEL START
 
-interface rover {
-  direction: direction;
-  position: point;
+interface Rover {
+  direction: Direction;
+  position: Coordinate;
 }
 
 // PLATFORM MODELS
 
-type point = {
+type Coordinate = {
   x: number;
   y: number;
 };
 
-type row = Array<point>;
+type PlaformMaximumCoordinate = Coordinate;
+
+type row = Array<Coordinate>;
 
 type Plaform = Array<row>;
 
@@ -34,3 +36,9 @@ type Plaform = Array<row>;
 interface Navigation<TRover, TSteer> {
   steer: (rover: TRover, direction: TSteer) => void;
 }
+
+interface Movement<TRover> {
+  forward: (rover: TRover) => void;
+}
+
+type BuildPlatform = (maxCoordinate: PlaformMaximumCoordinate) => Plaform;
