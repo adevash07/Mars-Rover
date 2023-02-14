@@ -4,7 +4,7 @@
 //   },
 // };
 
-const navigation: Navigation<rover, steer> = {
+const navigation: Navigation<Rover, Steer> = {
   steer: (rover, steer) => {
     //change direction of rover steering the current direction 90deg to left if steer is L or 90deg from right if steer is R
     if (rover.direction === "N") {

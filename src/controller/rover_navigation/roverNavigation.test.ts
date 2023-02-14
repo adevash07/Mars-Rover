@@ -1,7 +1,7 @@
 import { navigation } from "./roverNavigation";
 
 describe("Testing Rover Navigation System", () => {
-  const apolloSearcher: rover = {
+  const apolloSearcher: Rover = {
     direction: "N",
     position: {
       x: 0,
