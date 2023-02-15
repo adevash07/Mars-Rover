@@ -24,7 +24,7 @@ type Coordinate = {
   y: number;
 };
 
-type PlaformMaximumCoordinate = Coordinate;
+type PlatformMaximumCoordinate = Coordinate;
 
 type row = Array<Coordinate>;
 
@@ -41,4 +41,4 @@ interface Movement<TRover> {
   forward: (rover: TRover) => void;
 }
 
-type BuildPlatform = (maxCoordinate: PlaformMaximumCoordinate) => Plaform;
+type BuildPlatform = (maxCoordinate: PlatformMaximumCoordinate) => Plaform;
