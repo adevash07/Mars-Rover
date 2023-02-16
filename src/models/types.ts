@@ -42,3 +42,5 @@ interface Movement<TRover> {
 }
 
 type BuildPlatform = (maxCoordinate: PlatformMaximumCoordinate) => Plaform;
+
+type BuildRover = (roverInfo: string) => Rover;
