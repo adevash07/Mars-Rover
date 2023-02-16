@@ -1,5 +1,6 @@
 import { navigation } from "../rover_navigation/roverNavigation";
 import { movement } from "../rover_movement/moveRover";
+import { PlatformMaximumCoordinate, Rover } from "../../models/types";
 
 const roverDriver = (
   rover: Rover,

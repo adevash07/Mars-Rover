@@ -1,3 +1,4 @@
+import { Rover } from "../../models/types";
 import { roverDriver } from "./roverDriver";
 
 describe("Testing Rover Driver System", () => {

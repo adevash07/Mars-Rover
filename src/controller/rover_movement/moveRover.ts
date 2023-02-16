@@ -1,3 +1,5 @@
+import { Movement, Rover } from "../../models/types";
+
 const movement: Movement<Rover> = {
   forward: (rover) => {
     //change position of rover moving forward one step

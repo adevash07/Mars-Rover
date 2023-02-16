@@ -1,3 +1,5 @@
+import { BuildRover, Direction } from "../../models/types";
+
 const createRover: BuildRover = (roverInfo) => {
   const [x, y, direction] = roverInfo.split(" ");
   return {

@@ -1,3 +1,5 @@
+import { BuildPlatform } from "../../models/types";
+
 const platformBuilder: BuildPlatform = (maxCoordinate) => {
   const platform = [];
   for (let y = 0; y <= maxCoordinate.y; y++) {

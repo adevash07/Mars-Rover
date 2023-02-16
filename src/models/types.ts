@@ -6,7 +6,7 @@ type East = "E";
 type Right = "R";
 type Left = "L";
 
-type Steer = "R" | "L";
+type Steer = Right | Left;
 
 type Direction = North | South | West | East;
 
@@ -44,3 +44,16 @@ interface Movement<TRover> {
 type BuildPlatform = (maxCoordinate: PlatformMaximumCoordinate) => Plaform;
 
 type BuildRover = (roverInfo: string) => Rover;
+
+export {
+  Rover,
+  Direction,
+  Coordinate,
+  PlatformMaximumCoordinate,
+  Plaform,
+  Navigation,
+  Movement,
+  BuildPlatform,
+  BuildRover,
+  Steer,
+};
