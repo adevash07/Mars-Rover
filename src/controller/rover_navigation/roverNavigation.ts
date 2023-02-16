@@ -10,9 +10,7 @@ const navigation: Navigation<Rover, Steer> = {
   steer: (rover, steer) => {
     //change direction of rover steering the current direction 90deg to left if steer is L or 90deg from right if steer is R
     if (rover.direction === "N") {
-      console.log("rover direction is N");
       if (steer === "R") {
-        console.log(steer);
         rover.direction = "E";
         return void 0;
       } else {

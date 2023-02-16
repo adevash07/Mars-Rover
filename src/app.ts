@@ -21,12 +21,6 @@ type missions = {
 type MissionResult = Rover[];
 
 const MarsExploration = async () => {
-  const roverInfo: roverInfo = {
-    initialX: 0,
-    initialY: 0,
-    initialDirection: "",
-    commands: "",
-  };
   const Missions: missions = {
     platform: {
       x: 0,
@@ -44,6 +38,13 @@ const MarsExploration = async () => {
   print("Please enter the maximum coordinates of the platform");
 
   function GetRoverInfo() {
+    const roverInfo: roverInfo = {
+      initialX: 0,
+      initialY: 0,
+      initialDirection: "",
+      commands: "",
+    };
+
     const getRoverInfo = () => {
       print("Please enter the initial position of the rover");
       let validateInput = false;
@@ -102,8 +103,8 @@ const MarsExploration = async () => {
             roverInfo.commands = commands;
             print(`⍰ Rover commands: ${commands}`);
             Missions.rovers.push(roverInfo);
-            askQuestion("Do you want to add another rover? (y/n)", (answer) => {
-              if (answer === "n") {
+            askQuestion("Do you want to add another rover? (Y/N)", (answer) => {
+              if (answer === "N") {
                 continueRoverInput = false;
                 StartMission();
               } else {
@@ -140,6 +141,7 @@ const MarsExploration = async () => {
 
   const StartMission = () => {
     console.log("Starting mission !!!");
+    console.log(Missions);
     Missions.rovers.forEach((rover) => {
       const Rover = createRover(
         `${rover.initialX} ${rover.initialY} ${rover.initialDirection}`
@@ -147,18 +149,21 @@ const MarsExploration = async () => {
       roverDriver(Rover, rover.commands, Missions.platform);
       MissionResults.push(Rover);
       print(
-        `Rover final position: ${Rover.position.x} ${Rover.position.y} ${Rover.direction}`
+        `Rover final position: ${Rover.position.x} ${Rover.position.y} ${Rover.direction}
+         ------------------------------------
+        `
       );
+    });
+    askQuestion("Do you want to start a new mission? (Y/N)", (answer) => {
+      if (answer === "Y") {
+        GetPlatformInfo();
+      } else {
+        print("Mission aborted");
+      }
     });
   };
 
-  askQuestion("Do you want to start the mission? (y/n)", (answer) => {
-    if (answer === "y") {
-      GetPlatformInfo();
-    } else {
-      print("Mission aborted");
-    }
-  });
+  GetPlatformInfo();
 };
 
 console.clear();
